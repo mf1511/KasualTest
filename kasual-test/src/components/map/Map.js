@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import axios from "axios";
-import countrycodes from "../../config/countryLoc";
+import countryCodes from "../../config/countryLoc";
 
 import("./Map.css");
 
@@ -18,10 +18,10 @@ function Map() {
         `https://u50g7n0cbj.execute-api.us-east-1.amazonaws.com/v2/locations?limit=500&country=${country}`
       )
       .then((res) => setCountryData(res.data));
-    const locData = countrycodes.ref_country_codes?.filter(
+    const locData = countryCodes.countryCodes?.filter(
       (pays) => pays.alpha2 === country
     )[0];
-    console.log(countrycodes.ref_country_codes);
+    console.log(countryCodes.countryCodes);
     const gpsPoint = {
       lat: locData.latitude,
       lng: locData.longitude,
