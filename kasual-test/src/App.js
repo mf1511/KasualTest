@@ -77,51 +77,7 @@ function App() {
     const long = countryChoice[0].longitude;
 
     setCenter([lat, long]);
-
-    console.log(countryData);
-    console.log(countryDataFilter);
-    console.log(parameter);
-    console.log(parametersArray);
-    console.log(parametersArray[1]);
   }, [countrySelected, selectedRadio]); //On relance useEffect à chaque changement de pays ou de nombre d'emplacements voulus
-
-  useEffect(() => {}, []);
-  // const paramValues = () => {
-  //   let result;
-  //   // eslint-disable-next-line no-lone-blocks
-  //   {
-  //     if (
-  //       parameter.results.id === 1 ||
-  //       2 ||
-  //       3 ||
-  //       4 ||
-  //       5 ||
-  //       6 ||
-  //       11 ||
-  //       19 ||
-  //       27 ||
-  //       19843 ||
-  //       19844
-  //     ) {
-  //       result = <p>µg/m³</p>;
-  //     } else if (
-  //       parameter.results.id === 7 ||
-  //       8 ||
-  //       9 ||
-  //       10 ||
-  //       21 ||
-  //       28 ||
-  //       35 ||
-  //       19840
-  //     ) {
-  //       result = <p>ppm</p>;
-  //     } else if (parameter.results.id === 33 || 126 || 130 || 135) {
-  //       result = <p>particles/cm³</p>;
-  //     }
-  //     console.log(result);
-  //     return result;
-  //   }
-  // };
 
   return (
     <div className="mapContainer">
@@ -150,7 +106,6 @@ function App() {
               </div>
               <p>Paramètre affiché : {selectedRadio}</p>
             </div>
-
             <div className="sensorValueContainer">
               <p className="sensorValue">Mesures</p>
               <div className="sensorValueDetails">
