@@ -85,6 +85,26 @@ function App() {
       {!loading && (
         <div>
           <div className="header">
+            <div className="paysContainer">
+              <div className="dropdown">
+                <button className="dropbtn">
+                  Choix du Pays <ArrowDropDownIcon className="dropbtn__arrow" />
+                </button>
+                <div className="dropdown-content">
+                  {countries.results?.map((country) => (
+                    <p
+                      id={country.name}
+                      key={country.name}
+                      className="country"
+                      onClick={() => setcountrySelected(country.code)}
+                    >
+                      {country.name}
+                    </p>
+                  ))}
+                </div>
+              </div>
+              <p>Pays affiché : {countrySelected}</p>
+            </div>
             <div className="parametersContainer">
               <div className="dropdown">
                 <button className="dropbtn">
@@ -124,26 +144,6 @@ function App() {
                   <p>{valueFrom}</p>
                 </div>
               </div>
-            </div>
-            <div className="paysContainer">
-              <div className="dropdown">
-                <button className="dropbtn">
-                  Choix du Pays <ArrowDropDownIcon className="dropbtn__arrow" />
-                </button>
-                <div className="dropdown-content">
-                  {countries.results?.map((country) => (
-                    <p
-                      id={country.name}
-                      key={country.name}
-                      className="country"
-                      onClick={() => setcountrySelected(country.code)}
-                    >
-                      {country.name}
-                    </p>
-                  ))}
-                </div>
-              </div>
-              <p>Pays affiché : {countrySelected}</p>
             </div>
           </div>
           <div className="App">
