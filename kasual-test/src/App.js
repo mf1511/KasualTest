@@ -18,7 +18,7 @@ function App() {
     return item.parameter;
   });
 
-  const parametersArray = Object.entries(parameter);
+  const parametersArray = Object.values(parameter);
   const res = parametersArray.filter((item) =>
     countryDataFilter.includes(item.name)
   );
@@ -80,7 +80,9 @@ function App() {
 
     console.log(countryData);
     console.log(countryDataFilter);
-    console.log(lat, long);
+    console.log(parameter);
+    console.log(parametersArray);
+    console.log(parametersArray[1]);
   }, [countrySelected, selectedRadio]); //On relance useEffect à chaque changement de pays ou de nombre d'emplacements voulus
 
   useEffect(() => {}, []);
@@ -148,17 +150,7 @@ function App() {
               </div>
               <p>Paramètre affiché : {selectedRadio}</p>
             </div>
-            {/* <div className="quantityContainer">
-              <p className="sensorName">Quantité de points de mesure</p>
-              <p>Actuel : {locNumber}</p>
-              <input
-                type="range"
-                min="1"
-                max="1200"
-                // rangevalue="500"
-                onChange={(e) => setLocNumber(e.target.value)}
-              />
-            </div> */}
+
             <div className="sensorValueContainer">
               <p className="sensorValue">Mesures</p>
               <div className="sensorValueDetails">
